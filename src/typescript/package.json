@@ -1,0 +1,14 @@
+{
+  "name": "@openally/config.typescript",
+  "version": "1.0.0",
+  "description": "TypeScript configuration (TSConfig)",
+  "exports": {
+    "./tsconfig": "./src/tsconfig.json"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [],
+  "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
+  "license": "MIT"
+}

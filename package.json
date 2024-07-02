@@ -1,0 +1,17 @@
+{
+  "name": "@openally/configs",
+  "version": "1.0.0",
+  "description": "Configuration Mono-repository (ESLint, TSConfig ...)",
+  "scripts": {
+    "test": "npm run test --ws --if-present",
+    "build": "tsc -b"
+  },
+  "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "src/typescript"
+  ],
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}
