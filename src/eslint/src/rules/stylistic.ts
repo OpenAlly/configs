@@ -1,4 +1,4 @@
-const rules = {
+export default {
   // https://eslint.style/rules/js/function-call-argument-newline#consistent
   "@stylistic/function-call-argument-newline": ["error", "consistent"],
   // https://eslint.style/rules/js/function-call-spacing#never
@@ -34,4 +34,3 @@ const rules = {
   "@stylistic/jsx-tag-spacing": "off",
   "@stylistic/jsx-wrap-multilines": "off"
 };
-export default rules;

@@ -1,4 +1,4 @@
-const rules = {
+export default {
   // See: https://eslint.org/docs/rules/accessor-pairs
   "accessor-pairs": "off",
 
@@ -215,4 +215,3 @@ const rules = {
   // See: https://eslint.org/docs/rules/yoda
   yoda: "error"
 };
-export default rules;

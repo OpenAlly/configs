@@ -10,7 +10,7 @@
     "test-only": "tsx --test ./test/test.ts",
     "test": "c8 --all --src ./src -r html npm run test-only",
     "lint": "cross-env eslint src/**/*.ts",
-    "sync": "npx tsx ./tools/sync.ts"
+    "sync": "npx tsx ./scripts/sync.ts"
   },
   "files": [
     "dist"
@@ -30,6 +30,8 @@
     "typescript-eslint": "^8.1.0"
   },
   "devDependencies": {
+    "@myunisoft/httpie": "^5.0.0",
+    "@types/jsdom": "^21.1.7",
     "@typescript-eslint/types": "^8.1.0",
     "jsdom": "^24.1.1"
   }

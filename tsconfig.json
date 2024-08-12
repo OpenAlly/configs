@@ -2,9 +2,6 @@
   "files": [],
   "references": [
     {
-      "path": "./src/typescript"
-    },
-    {
       "path": "./src/eslint"
     }
   ]

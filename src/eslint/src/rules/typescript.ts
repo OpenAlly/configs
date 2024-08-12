@@ -1,7 +1,7 @@
 /**
  * See https://eslint.style/packages/ts#rules
  */
-const rules = {
+export default {
   "@stylistic/brace-style": ["error", "stroustrup"],
   "@stylistic/comma-dangle": ["error", "never"],
   "@stylistic/comma-spacing": [
@@ -61,4 +61,3 @@ const rules = {
     }
   ]
 };
-export default rules;

@@ -1,4 +1,4 @@
-const rules = {
+export default {
   // See: https://eslint.org/docs/rules/arrow-body-style
   "arrow-body-style": ["error", "as-needed", { requireReturnForObjectLiteral: true }],
 
@@ -89,5 +89,3 @@ const rules = {
   // See: https://eslint.style/rules/js/ryield-star-spacing
   "@stylistic/yield-star-spacing": ["error", { before: false, after: true }]
 };
-
-export default rules;

@@ -1,4 +1,4 @@
-const rules = {
+export default {
   // See: https://eslint.org/docs/rules/for-direction
   "for-direction": "error",
 
@@ -107,4 +107,3 @@ const rules = {
   // See: https://eslint.org/docs/rules/valid-typeof
   "valid-typeof": ["error", { requireStringLiterals: true }]
 };
-export default rules;

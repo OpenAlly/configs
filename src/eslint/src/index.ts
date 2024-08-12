@@ -6,14 +6,7 @@ import * as tsParser from "@typescript-eslint/parser";
 import type { SourceType } from "@typescript-eslint/types";
 
 // Import Internal Dependencies
-import bestPractices from "./rules/best-practices.js";
-import ecmascript6 from "./rules/ecmascript6.js";
-import eslintv9 from "./rules/eslintv9.js";
-import possibleErrors from "./rules/possible-errors.js";
-import styles from "./rules/styles.js";
-import variables from "./rules/variables.js";
-import stylistic from "./rules/stylistic.js";
-import typescript from "./rules/typescript.js";
+import { rules, rulesWithTS } from "./rules/index.js";
 
 const kLanguageOptions = {
   sourceType: "script",
@@ -26,15 +19,6 @@ const kTypescriptLanguageOptions = {
   sourceType: "module" as SourceType,
   parser: tsParser
 };
-const kRules: Record<string, any> = {
-  ...bestPractices,
-  ...possibleErrors,
-  ...styles,
-  ...ecmascript6,
-  ...eslintv9,
-  ...variables,
-  ...stylistic
-};
 const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
   {
     plugins: {
@@ -42,8 +26,7 @@ const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
       "@stylistic": stylisticPlugin
     },
     rules: {
-      ...kRules,
-      ...typescript as any,
+      ...rulesWithTS,
       "no-undef": "off",
       "no-redeclare": "off"
     },
@@ -62,7 +45,7 @@ export const ESLintConfig = [{
   plugins: {
     "@stylistic": stylisticPlugin
   },
-  rules: kRules,
+  rules,
   languageOptions: kLanguageOptions
 }];
 
