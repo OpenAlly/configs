@@ -1,19 +1,8 @@
 {
+  "extends": "../typescript/esm/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "strictNullChecks": true,
-    "target": "ES2022",
     "outDir": "dist",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
-    "resolveJsonModule": false,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "sourceMap": true,
-    "rootDir": "./src",
-    "types": ["node"]
+    "rootDir": "./src"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

@@ -1,4 +1,4 @@
-const rules = {
+export default {
   "no-constant-binary-expression": "error",
   "no-constructor-return": "off",
   "no-dupe-else-if": "error",
@@ -28,4 +28,3 @@ const rules = {
   "prefer-regex-literals": "off",
   strict: "off"
 };
-export default rules;

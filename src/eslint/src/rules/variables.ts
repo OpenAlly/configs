@@ -1,4 +1,4 @@
-const rules = {
+export default {
   // See: https://eslint.org/docs/rules/init-declarations
   "init-declarations": "off",
 
@@ -29,4 +29,3 @@ const rules = {
   // See: https://eslint.org/docs/rules/no-unused-vars
   "no-unused-vars": "off"
 };
-export default rules;

@@ -1,4 +1,4 @@
-const rules = {
+export default {
   // See: https://eslint.style/rules/js/array-bracket-newline
   "@stylistic/array-bracket-newline": "off",
 
@@ -294,4 +294,3 @@ const rules = {
   // See: https://eslint.style/rules/js/twrap-regex
   "@stylistic/wrap-regex": "off"
 };
-export default rules;

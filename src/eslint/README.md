@@ -1,6 +1,6 @@
-<p align="center"><h1 align="center">
-  Eslint Config
-</h1>
+<p align="center">
+  <h1 align="center">Eslint Config</h1>
+</p>
 
 <div align="center">OpenAlly Node.js Eslint configuration (Work for both JavaScript and TypeScript projects).</div>
 
