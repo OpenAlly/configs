@@ -1,9 +1,9 @@
 // Import Third-party Dependencies
 import stylisticPlugin from "@stylistic/eslint-plugin";
 import globals from "globals";
-import tsEslint, { ConfigWithExtends } from "typescript-eslint";
+import tsEslint, { type ConfigWithExtends } from "typescript-eslint";
 import * as tsParser from "@typescript-eslint/parser";
-import { SourceType } from "@typescript-eslint/types";
+import type { SourceType } from "@typescript-eslint/types";
 
 // Import Internal Dependencies
 import bestPractices from "./rules/best-practices.js";
@@ -38,6 +38,7 @@ const kRules: Record<string, any> = {
 const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
   {
     plugins: {
+      // @ts-ignore
       "@stylistic": stylisticPlugin
     },
     rules: {

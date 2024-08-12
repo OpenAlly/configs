@@ -8,22 +8,27 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-
+    "verbatimModuleSyntax": false,
+    
     /* Strictness */
     "strict": true,
+    "strictNullChecks": true,
     "noUncheckedIndexedAccess": false,
+    "noImplicitAny": false,
     "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
 
     /* Others */
-    "module": "NodeNext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "sourceMap": true,
     "declaration": true,
     "composite": false,
     "declarationMap": true,
+    "experimentalDecorators": true,
     "lib": ["es2022"]
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

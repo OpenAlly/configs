@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "TypeScript configuration (TSConfig)",
   "exports": {
-    "./tsconfig": "./src/tsconfig.json"
+    "./esm": "./src/esm/tsconfig.json",
+    "./cjs": "./src/cjs/tsconfig.json"
   },
   "files": [
     "src"
