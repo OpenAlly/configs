@@ -16,7 +16,8 @@ Click on one of the links to access the documentation of the package:
 
 | name | package and link |
 | --- | --- |
-| config.typescript | [@openally/config.typescript](./workspaces/typescript) |
+| config.typescript | [@openally/config.typescript](./src/typescript) |
+| config.eslint | [@openally/config.eslint](./src/eslint) |
 
 These packages are available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
 ```bash
