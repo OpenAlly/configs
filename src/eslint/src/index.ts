@@ -14,11 +14,7 @@ const kLanguageOptions = {
     ...globals.node
   }
 };
-const kTypescriptLanguageOptions = {
-  ...kLanguageOptions,
-  sourceType: "module" as SourceType,
-  parser: tsParser
-};
+
 const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
   {
     plugins: {
@@ -30,7 +26,11 @@ const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
       "no-undef": "off",
       "no-redeclare": "off"
     },
-    languageOptions: kTypescriptLanguageOptions,
+    languageOptions: {
+      ...kLanguageOptions,
+      sourceType: "module" as SourceType,
+      parser: tsParser
+    },
     files: ["**/*.ts"]
   },
   {
@@ -41,18 +41,20 @@ const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
   }
 ];
 
-export const ESLintConfig = [{
-  plugins: {
-    "@stylistic": stylisticPlugin
-  },
-  rules,
-  languageOptions: kLanguageOptions
-}];
-
-export function typescriptConfig(config?: ConfigWithExtends) {
-  if (config) {
-    return tsEslint.config(...kBaseTypeScriptConfigs, config);
+export const ESLintConfig = [
+  {
+    plugins: {
+      "@stylistic": stylisticPlugin
+    },
+    rules,
+    languageOptions: kLanguageOptions
   }
+];
 
-  return tsEslint.config(...kBaseTypeScriptConfigs);
+export function typescriptConfig(
+  config?: ConfigWithExtends
+) {
+  return config ?
+    tsEslint.config(...kBaseTypeScriptConfigs, config) :
+    tsEslint.config(...kBaseTypeScriptConfigs);
 }
