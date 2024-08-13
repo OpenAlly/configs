@@ -6,6 +6,18 @@
   Mono-repository for tools configuration (ESLint, TSConfig)
 </p>
 
+<p align="center">
+  <a href="https://github.com/OpenAlly/configs">
+    <img src="https://img.shields.io/github/license/OpenAlly/configs?style=for-the-badge" alt="license">
+  </a>
+  <a href="https://github.com/OpenAlly/configs">
+    <img src="https://img.shields.io/maintenance/yes/2025?style=for-the-badge" alt="maintained">
+  </a>
+  <a href="https://api.securityscorecards.dev/projects/github.com/OpenAlly/configs">
+    <img src="https://api.securityscorecards.dev/projects/github.com/OpenAlly/configs/badge?style=for-the-badge" alt="ossf scorecard">
+  </a>
+</p>
+
 ## Requirements
 - [Node.js](https://nodejs.org/en/) version 20 or higher
 - npm v7+ for [workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces)
