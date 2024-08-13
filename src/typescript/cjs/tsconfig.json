@@ -13,6 +13,7 @@
     /* Strictness */
     "strict": true,
     "strictNullChecks": true,
+    "strictPropertyInitialization": false,
     "noUncheckedIndexedAccess": false,
     "noImplicitAny": false,
     "noImplicitOverride": true,
