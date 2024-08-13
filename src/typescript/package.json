@@ -8,7 +8,8 @@
     "./cjs": "./src/cjs/tsconfig.json"
   },
   "files": [
-    "src"
+    "cjs",
+    "esm"
   ],
   "keywords": [],
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
