@@ -1,6 +1,6 @@
 {
   "name": "@openally/config.typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript configuration (TSConfig)",
   "exports": {
     ".": "./src/esm/tsconfig.json",
