@@ -42,5 +42,27 @@ export default [
 ];
 ```
 
+### Globals
+
+This package export the npm package `globals` in case you need to add global variables to your project.
+
+For instance if you need browser globals you can add the following to your `eslint.config.mjs` file:
+
+```js
+// eslint.config.mjs
+import { ESLintConfig, globals } from "@openally/config.eslint";
+
+export default [
+  ...ESLintConfig,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser
+      }
+    }
+  }
+];
+```
+
 ## License
 MIT
