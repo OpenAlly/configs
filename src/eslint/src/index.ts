@@ -58,3 +58,4 @@ export function typescriptConfig(
     tsEslint.config(...kBaseTypeScriptConfigs, config) :
     tsEslint.config(...kBaseTypeScriptConfigs);
 }
+export { globals };
