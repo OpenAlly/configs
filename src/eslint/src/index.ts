@@ -24,7 +24,8 @@ const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
     rules: {
       ...rulesWithTS,
       "no-undef": "off",
-      "no-redeclare": "off"
+      "no-redeclare": "off",
+      "no-invalid-this": "off"
     },
     languageOptions: {
       ...kLanguageOptions,
