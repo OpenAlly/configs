@@ -27,5 +27,5 @@ export default {
   "no-undefined": "off",
 
   // See: https://eslint.org/docs/rules/no-unused-vars
-  "no-unused-vars": "off"
+  "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
 };
