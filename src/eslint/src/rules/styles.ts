@@ -2,16 +2,16 @@ export default {
   // See: https://eslint.style/rules/js/array-bracket-newline
   "@stylistic/array-bracket-newline": "off",
 
-  // See: https://eslint.style/rules/array-bracket-spacing
+  // See: https://eslint.style/rules/default/array-bracket-spacing
   "@stylistic/array-bracket-spacing": ["error", "never"],
 
   // See: https://eslint.style/rules/js/array-element-newline
   "@stylistic/array-element-newline": "off",
 
-  // See: https://eslint.style/rules/block-spacing
+  // See: https://eslint.style/rules/default/block-spacing
   "@stylistic/block-spacing": ["error", "always"],
 
-  // See: https://eslint.style/rules/brace-style
+  // See: https://eslint.style/rules/default/brace-style
   "@stylistic/brace-style": ["error", "stroustrup"],
 
   // See: https://eslint.org/docs/rules/camelcase
@@ -20,10 +20,10 @@ export default {
   // See: https://eslint.org/docs/rules/capitalized-comments
   "capitalized-comments": "off",
 
-  // See: https://eslint.style/rules/comma-dangle
+  // See: https://eslint.style/rules/default/comma-dangle
   "@stylistic/comma-dangle": ["error", "never"],
 
-  // See: https://eslint.style/rules/comma-spacing
+  // See: https://eslint.style/rules/default/comma-spacing
   "@stylistic/comma-spacing": [
     "error", { before: false, after: true }
   ],
@@ -31,16 +31,16 @@ export default {
   // See: https://eslint.style/rules/js/comma-style
   "@stylistic/comma-style": "off",
 
-  // See: https://eslint.style/rules/computed-property-spacing
+  // See: https://eslint.style/rules/default/computed-property-spacing
   "@stylistic/computed-property-spacing": ["error", "never"],
 
   // See: https://eslint.org/docs/rules/consistent-this
   "consistent-this": ["error", "self"],
 
-  // See: https://eslint.style/rules/eol-last
+  // See: https://eslint.style/rules/default/eol-last
   "@stylistic/eol-last": ["error", "always"],
 
-  // See: https://eslint.style/rules/func-call-spacing
+  // See: https://eslint.style/rules/default/func-call-spacing
   "@stylistic/func-call-spacing": ["error", "never"],
 
   // See: https://eslint.org/docs/rules/func-name-matching
@@ -64,7 +64,7 @@ export default {
   // See: https://eslint.org/docs/rules/id-match
   "id-match": "off",
 
-  // See: https://eslint.style/rules/implicit-arrow-linebreak
+  // See: https://eslint.style/rules/default/implicit-arrow-linebreak
   "@stylistic/implicit-arrow-linebreak": ["error", "beside"],
 
   // See: https://eslint.style/rules/js/rules/indent

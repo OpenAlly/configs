@@ -3,13 +3,13 @@ export default {
   "@stylistic/function-call-argument-newline": ["error", "consistent"],
   // https://eslint.style/rules/js/function-call-spacing#never
   "@stylistic/function-call-spacing": ["error", "never"],
-  // https://eslint.style/rules/plus/indent-binary-ops#options
+  // https://eslint.style/rules/default/plus/indent-binary-ops#options
   "@stylistic/indent-binary-ops": ["error", 2],
   // https://eslint.style/rules/js/semi-spacing#options
   "@stylistic/semi-spacing": ["error", { before: false, after: true }],
-  // https://eslint.style/rules/plus/type-generic-spacing#options
+  // https://eslint.style/rules/default/plus/type-generic-spacing#options
   "@stylistic/type-generic-spacing": ["error"],
-  // https://eslint.style/rules/plus/type-named-tuple-spacing#options
+  // https://eslint.style/rules/default/plus/type-named-tuple-spacing#options
   "@stylistic/type-named-tuple-spacing": ["error"],
 
   // skip JSX rules

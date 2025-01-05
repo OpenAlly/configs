@@ -23,16 +23,16 @@
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@stylistic/eslint-plugin": "^2.6.2",
-    "@typescript-eslint/parser": "8.19.0",
-    "eslint": "^9.9.0",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.1.0"
+    "@eslint/js": "^9.17.0",
+    "@stylistic/eslint-plugin": "^2.12.1",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "typescript-eslint": "^8.19.0"
   },
   "devDependencies": {
-    "@myunisoft/httpie": "^5.0.0",
+    "@myunisoft/httpie": "^5.0.1",
     "@types/jsdom": "^21.1.7",
-    "@typescript-eslint/types": "^8.1.0",
-    "jsdom": "^25.0.0"
+    "@typescript-eslint/types": "^8.19.0",
+    "jsdom": "^25.0.1"
   }
 }

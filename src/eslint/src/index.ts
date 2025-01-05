@@ -1,8 +1,8 @@
 // Import Third-party Dependencies
+import eslint from "@eslint/js";
 import stylisticPlugin from "@stylistic/eslint-plugin";
 import globals from "globals";
-import tsEslint, { type ConfigWithExtends } from "typescript-eslint";
-import * as tsParser from "@typescript-eslint/parser";
+import tsEslint, { type ConfigArray, type ConfigWithExtends } from "typescript-eslint";
 import type { SourceType } from "@typescript-eslint/types";
 
 // Import Internal Dependencies
@@ -15,9 +15,10 @@ const kLanguageOptions = {
   }
 };
 
-const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
+const kBaseTypeScriptConfigs: ConfigArray = [
   {
     plugins: {
+      "@typescript-eslint": tsEslint.plugin,
       // @ts-ignore
       "@stylistic": stylisticPlugin
     },
@@ -25,12 +26,13 @@ const kBaseTypeScriptConfigs: ConfigWithExtends[] = [
       ...rulesWithTS,
       "no-undef": "off",
       "no-redeclare": "off",
-      "no-invalid-this": "off"
+      "no-invalid-this": "off",
+      "no-unused-vars": "off",
     },
     languageOptions: {
       ...kLanguageOptions,
       sourceType: "module" as SourceType,
-      parser: tsParser
+      parser: tsEslint.parser
     },
     files: ["**/*.ts"]
   },
@@ -55,8 +57,12 @@ export const ESLintConfig = [
 export function typescriptConfig(
   config?: ConfigWithExtends
 ) {
-  return config ?
-    tsEslint.config(...kBaseTypeScriptConfigs, config) :
-    tsEslint.config(...kBaseTypeScriptConfigs);
+  const configs: (ConfigArray & ConfigWithExtends[]) = [eslint.configs.recommended, kBaseTypeScriptConfigs];
+  if (config) {
+    configs.push(config);
+  }
+
+  return tsEslint.config(...configs);
 }
+
 export { globals };

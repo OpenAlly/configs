@@ -2,16 +2,16 @@ export default {
   // See: https://eslint.org/docs/rules/arrow-body-style
   "arrow-body-style": ["error", "as-needed", { requireReturnForObjectLiteral: true }],
 
-  // See: https://eslint.style/rules/arrow-parens
+  // See: https://eslint.style/rules/default/arrow-parens
   "@stylistic/arrow-parens": ["error", "always"],
 
-  // See: https://eslint.style/rules/arrow-spacing
+  // See: https://eslint.style/rules/default/arrow-spacing
   "@stylistic/arrow-spacing": "error",
 
   // See: https://eslint.org/docs/rules/constructor-super
   "constructor-super": "error",
 
-  // See: https://eslint.style/rules/enerator-star-spacing
+  // See: https://eslint.style/rules/default/enerator-star-spacing
   "@stylistic/generator-star-spacing": ["error", { before: false, after: true }],
 
   // See: https://eslint.org/docs/rules/no-class-assign
@@ -83,9 +83,9 @@ export default {
   // See: https://eslint.org/docs/rules/symbol-description
   "symbol-description": "error",
 
-  // See: https://eslint.style/rules/js/rtemplate-curly-spacing
+  // See: https://eslint.style/rules/js/template-curly-spacing
   "@stylistic/template-curly-spacing": "error",
 
-  // See: https://eslint.style/rules/js/ryield-star-spacing
+  // See: https://eslint.style/rules/js/yield-star-spacing
   "@stylistic/yield-star-spacing": ["error", { before: false, after: true }]
 };

@@ -14,9 +14,9 @@
     "src/eslint"
   ],
   "devDependencies": {
-    "@types/node": "^22.2.0",
-    "c8": "^10.1.2",
-    "tsx": "^4.17.0",
-    "typescript": "^5.5.4"
+    "@types/node": "^22.10.5",
+    "c8": "^10.1.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   }
 }
