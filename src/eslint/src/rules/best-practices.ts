@@ -77,7 +77,7 @@ export default {
   // See: https://eslint.org/docs/rules/no-fallthrough
   "no-fallthrough": "error",
 
-  // See: https://eslint.style/rules/no-floating-decimal
+  // See: https://eslint.style/rules/default/no-floating-decimal
   "@stylistic/no-floating-decimal": "error",
 
   // See: https://eslint.org/docs/rules/no-global-assign
@@ -110,7 +110,7 @@ export default {
   // See: https://eslint.org/docs/rules/no-magic-numbers
   "no-magic-numbers": "off",
 
-  // See: https://eslint.style/rules/no-multi-spaces
+  // See: https://eslint.style/rules/default/no-multi-spaces
   "@stylistic/no-multi-spaces": "error",
 
   // See: https://eslint.org/docs/rules/no-multi-str
@@ -146,7 +146,7 @@ export default {
   // See: https://eslint.org/docs/rules/no-return-assign
   "no-return-assign": ["error", "except-parens"],
 
-  // See: https://eslint.style/rules/jsno-return-await
+  // See: https://eslint.style/rules/default/jsno-return-await
   "@stylistic/no-return-await": "off",
 
   // See: https://eslint.org/docs/rules/no-script-url
@@ -209,7 +209,7 @@ export default {
   // See: https://eslint.org/docs/rules/vars-on-top
   "vars-on-top": "error",
 
-  // See: https://eslint.style/rules/wrap-iife
+  // See: https://eslint.style/rules/default/wrap-iife
   "@stylistic/wrap-iife": "error",
 
   // See: https://eslint.org/docs/rules/yoda
