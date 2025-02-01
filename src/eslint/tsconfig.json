@@ -2,7 +2,8 @@
   "extends": "../typescript/esm/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "lib": ["ES2023"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

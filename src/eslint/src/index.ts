@@ -7,6 +7,16 @@ import type { SourceType } from "@typescript-eslint/types";
 
 // Import Internal Dependencies
 import { rules, rulesWithTS } from "./rules/index.js";
+import { rules as openallyRules } from "./customRules/index.js";
+import pkg from "../package.json" with { type: "json" };
+
+const kOpenallyPlugin = {
+  meta: {
+    name: "@openally",
+    version: pkg.version
+  },
+  rules: openallyRules
+};
 
 const kLanguageOptions = {
   sourceType: "script",
@@ -20,14 +30,15 @@ const kBaseTypeScriptConfigs: ConfigArray = [
     plugins: {
       "@typescript-eslint": tsEslint.plugin,
       // @ts-ignore
-      "@stylistic": stylisticPlugin
+      "@stylistic": stylisticPlugin,
+      "@openally": kOpenallyPlugin
     },
     rules: {
       ...rulesWithTS,
       "no-undef": "off",
       "no-redeclare": "off",
       "no-invalid-this": "off",
-      "no-unused-vars": "off",
+      "no-unused-vars": "off"
     },
     languageOptions: {
       ...kLanguageOptions,
@@ -47,7 +58,8 @@ const kBaseTypeScriptConfigs: ConfigArray = [
 export const ESLintConfig = [
   {
     plugins: {
-      "@stylistic": stylisticPlugin
+      "@stylistic": stylisticPlugin,
+      "@openally": kOpenallyPlugin
     },
     rules,
     languageOptions: kLanguageOptions

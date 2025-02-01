@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import { ESLint, type Linter } from "eslint";
 
 // Import Internal Dependencies
-import { typescriptConfig, ESLintConfig } from "../src/index.js";
+import { ESLintConfig } from "../src/index.js";
 
 test("should lint valid JavaScript", async() => {
   const eslint = new ESLint({
@@ -36,7 +36,6 @@ test("should lint invalid JavaScript", async() => {
 
 test("should lint valid TypeScript", async() => {
   const eslint = new ESLint({
-    baseConfig: typescriptConfig() as Linter.Config,
     overrideConfig: {
       ignores: ["!**/fixtures"]
     }
@@ -49,7 +48,6 @@ test("should lint valid TypeScript", async() => {
 
 test("should lint invalid TypeScript", async() => {
   const eslint = new ESLint({
-    baseConfig: typescriptConfig() as any,
     overrideConfig: {
       ignores: ["!**/fixtures"]
     }
