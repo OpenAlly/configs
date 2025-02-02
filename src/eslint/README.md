@@ -42,6 +42,12 @@ export default [
 ];
 ```
 
+### OpenAlly Plugin
+
+This package also includes the OpenAlly plugin custom rules, as follows:
+
+- [`@openally/imports`](./docs/imports.md)
+
 ### Globals
 
 This package export the npm package `globals` in case you need to add global variables to your project.

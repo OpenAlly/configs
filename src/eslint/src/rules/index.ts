@@ -1,3 +1,4 @@
+// Import Internal Dependencies
 import possibleErrors from "./possible-errors.js";
 import bestPractices from "./best-practices.js";
 import ecmascript6 from "./ecmascript6.js";
@@ -6,6 +7,7 @@ import variables from "./variables.js";
 import eslintv9 from "./eslintv9.js";
 import typescript from "./typescript.js";
 import stylistic from "./stylistic.js";
+import openally from "./openally.js";
 
 export const rules: Record<string, any> = {
   ...bestPractices,
@@ -14,7 +16,8 @@ export const rules: Record<string, any> = {
   ...ecmascript6,
   ...eslintv9,
   ...variables,
-  ...stylistic
+  ...stylistic,
+  ...openally
 };
 
 export const rulesWithTS: Record<string, any> = {
