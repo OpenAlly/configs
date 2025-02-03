@@ -104,7 +104,7 @@ function findLastImports(imports: ImportDeclaration[]) {
     lastPreviousNode,
     lastPreviousThirdParty,
     lastPreviousInternal
-  }
+  };
 }
 
 const createRule = ESLintUtils.RuleCreator(
