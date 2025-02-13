@@ -11,6 +11,8 @@ export default {
   "@stylistic/type-generic-spacing": ["error"],
   // https://eslint.style/rules/default/plus/type-named-tuple-spacing#options
   "@stylistic/type-named-tuple-spacing": ["error"],
+  // https://eslint.style/rules/default/curly-newline
+  "@stylistic/curly-newline": ["error", "always"],
 
   // skip JSX rules
   "@stylistic/jsx-child-element-spacing": "off",

@@ -6,6 +6,7 @@ import { JSDOM } from "jsdom";
 import { rulesWithTS } from "../src/rules/index.js";
 
 // CONSTANTS
+const kStylistic = Symbol("stylistic");
 const kEslintRulesReferenceUrl = "https://eslint.org/docs/latest/rules/";
 const kStylisticRulesUrl = "https://eslint.style/rules";
 const kLocalRules = new Set(Object.keys(rulesWithTS));
@@ -18,7 +19,7 @@ const eslintDom = new JSDOM(eslintResult.data);
 const stylisticDom = new JSDOM(stylisticResult.data);
 const rules = new Set([
   ...parseESLintRulesReferences(eslintDom),
-  ...parseStylisticRules(stylisticDom)
+  ...parseStylisticRules(stylisticDom).map((rule) => Object.assign(rule, { [kStylistic]: true }))
 ]);
 
 for (const rule of rules) {
@@ -38,7 +39,7 @@ for (const rule of rules) {
     !rule.isDeprecated &&
     !rule.isRemoved
   ) {
-    const label = kEslintRulesReferenceUrl + rule.ruleName;
+    const label = rule[kStylistic] ? `${kStylisticRulesUrl}/default/${rule.ruleName}` : kEslintRulesReferenceUrl + rule.ruleName;
     console.error(
       `Rule "${rule.ruleName}" is not present in the local ESLint configuration!(${label})`
     );
