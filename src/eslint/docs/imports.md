@@ -54,7 +54,6 @@ import fastify from "fastify";
 import fs from "node:fs";
 ```
 **Error:** `Node.js imports should be before third-party imports`
----
 
 ### Space between Comment and Import
 
