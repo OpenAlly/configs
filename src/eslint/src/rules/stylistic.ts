@@ -12,7 +12,7 @@ export default {
   // https://eslint.style/rules/default/plus/type-named-tuple-spacing#options
   "@stylistic/type-named-tuple-spacing": ["error"],
   // https://eslint.style/rules/default/curly-newline
-  "@stylistic/curly-newline": ["error", "always"],
+  "@stylistic/curly-newline": "off",
 
   // skip JSX rules
   "@stylistic/jsx-child-element-spacing": "off",
