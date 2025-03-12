@@ -13,6 +13,7 @@ function isConstantCase(str: string) {
 export const rule = createRule({
   create(context) {
     let isTopLevel = true;
+    let lastConstant: TSESTree.VariableDeclaration | null = null;
 
     return {
       "Program > VariableDeclaration[kind=const]"(node: TSESTree.VariableDeclaration) {
@@ -28,6 +29,19 @@ export const rule = createRule({
         const program = node.parent as TSESTree.Program;
         const constantsComment = program.comments?.find((comment) => comment.value.trimStart().startsWith("CONSTANT"));
         const constantsCommentAboveConstant = constantsComment && constantsComment.loc.end.line < identifier.loc.start.line;
+
+        if (constantsCommentAboveConstant && lastConstant) {
+          const lastConstantLine = lastConstant.loc.start.line;
+          const currentConstantLine = identifier.loc.start.line;
+
+          if (currentConstantLine - lastConstantLine !== 1) {
+            isTopLevel = false;
+
+            return;
+          }
+        }
+
+        lastConstant = node;
 
         if (constantsComment && constantsComment.value.trim() !== "CONSTANTS") {
           context.report({
