@@ -68,6 +68,15 @@ ruleTester.run("constants", rule, {
       // CONSTANTS
       const [foo] = bar;
       `
+    },
+    {
+      // should not report when there is blank line after the constants zone
+      code: `
+      // CONSTANTS
+      const kFoo = "foo";
+
+      const bar = "bar";
+      `
     }
   ],
   invalid: [
