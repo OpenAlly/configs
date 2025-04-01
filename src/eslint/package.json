@@ -1,6 +1,6 @@
 {
   "name": "@openally/config.eslint",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "OpenAlly ESLint configuration for Node.js and TypeScript",
   "type": "module",
   "main": "./dist/index.js",
