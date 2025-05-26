@@ -248,6 +248,7 @@ export default {
     "error",
     "double",
     {
+      avoidEscape: true,
       allowTemplateLiterals: "avoidEscape"
     }
   ],
