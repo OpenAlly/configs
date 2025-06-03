@@ -5,7 +5,9 @@
   "scripts": {
     "test": "npm run test --ws --if-present",
     "build": "tsc -b",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "ci:publish": "changeset publish",
+    "ci:version": "changeset version"
   },
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "license": "MIT",
@@ -14,6 +16,8 @@
     "src/eslint"
   ],
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.4",
     "@types/node": "^22.10.5",
     "c8": "^10.1.3",
     "glob": "^11.0.1",
