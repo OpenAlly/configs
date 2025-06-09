@@ -58,3 +58,28 @@ test("should lint invalid TypeScript", async() => {
   assert.strictEqual(result.errorCount, 1);
   assert.strictEqual(result.messages[0].message, "Missing semicolon.");
 });
+
+test("interface naming convention should fail when using 'I' prefix", async() => {
+  const eslint = new ESLint({
+    overrideConfig: {
+      ignores: ["!**/fixtures"]
+    }
+  });
+  const [result] = await eslint.lintFiles(["./test/fixtures/interface-i-fail.ts"]);
+
+  assert.strictEqual(result.warningCount, 0);
+  assert.strictEqual(result.errorCount, 1);
+  assert.strictEqual(result.messages[0].message, "Interface name `IUser` must not match the RegExp: /^I[A-Z][a-z]/u");
+});
+
+test("interface naming convention should pass when using 'I' prefix with more than one uppercase character", async() => {
+  const eslint = new ESLint({
+    overrideConfig: {
+      ignores: ["!**/fixtures"]
+    }
+  });
+  const [result] = await eslint.lintFiles(["./test/fixtures/interface-i-pass.ts"]);
+
+  assert.strictEqual(result.warningCount, 0);
+  assert.strictEqual(result.errorCount, 0);
+});
