@@ -76,5 +76,16 @@ export default {
     destructuredArrayIgnorePattern: "^_",
     varsIgnorePattern: "^_",
     ignoreRestSiblings: true
-  }]
+  }],
+  "@typescript-eslint/naming-convention": [
+    "error",
+    {
+      selector: "interface",
+      format: ["PascalCase"],
+      custom: {
+        regex: "^I[A-Z][a-z]",
+        match: false
+      }
+    }
+  ]
 };
