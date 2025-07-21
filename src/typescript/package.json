@@ -2,6 +2,10 @@
   "name": "@openally/config.typescript",
   "version": "1.0.3",
   "description": "TypeScript configuration (TSConfig)",
+  "type": "module",
+  "bin": {
+    "clear-ts-build": "./bin/clear-ts-build.js"
+  },
   "exports": {
     ".": "./esm/tsconfig.json",
     "./esm": "./esm/tsconfig.json",
@@ -9,7 +13,8 @@
   },
   "files": [
     "cjs",
-    "esm"
+    "esm",
+    "bin"
   ],
   "keywords": [],
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
