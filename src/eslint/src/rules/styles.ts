@@ -40,8 +40,8 @@ export default {
   // See: https://eslint.style/rules/default/eol-last
   "@stylistic/eol-last": ["error", "always"],
 
-  // See: https://eslint.style/rules/default/func-call-spacing
-  "@stylistic/func-call-spacing": ["error", "never"],
+  // See: https://eslint.style/rules/default/function-call-spacing
+  "@stylistic/function-call-spacing": ["error", "never"],
 
   // See: https://eslint.org/docs/rules/func-name-matching
   "func-name-matching": "off",

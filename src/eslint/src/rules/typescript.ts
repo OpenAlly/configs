@@ -7,7 +7,7 @@ export default {
   "@stylistic/comma-spacing": [
     "error", { before: false, after: true }
   ],
-  "@stylistic/func-call-spacing": ["error", "never"],
+  "@stylistic/function-call-spacing": ["error", "never"],
   "@stylistic/key-spacing": ["error", { beforeColon: false }],
   "@stylistic/keyword-spacing": ["error", { before: true }],
   "@stylistic/lines-around-comment": "off",
