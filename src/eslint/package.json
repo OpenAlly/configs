@@ -36,6 +36,6 @@
     "@myunisoft/httpie": "^5.0.1",
     "@types/jsdom": "^21.1.7",
     "@typescript-eslint/types": "^8.19.0",
-    "jsdom": "^26.0.0"
+    "jsdom": "^27.0.0"
   }
 }
