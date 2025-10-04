@@ -9,6 +9,7 @@
   "exports": {
     ".": "./esm/tsconfig.json",
     "./esm": "./esm/tsconfig.json",
+    "./esm-ts-next": "./esm-ts-next/tsconfig.json",
     "./cjs": "./cjs/tsconfig.json"
   },
   "files": [

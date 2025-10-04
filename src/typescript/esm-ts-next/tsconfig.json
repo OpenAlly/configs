@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    
+    /* Strictness */
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitAny": false,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Others */
+    "module": "NodeNext",
+    "sourceMap": true,
+    "declaration": true,
+    "composite": false,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "lib": ["ES2022", "ES2023", "ES2024"],
+
+    /* Node.js type Stripping */
+    "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true
+  }
+}
