@@ -29,13 +29,15 @@ $ yarn add @openally/config.typescript -D
 
 ```
 
-Use either **cjs** or **esm**
+Use either **cjs**, **esm** or **esm-ts-next**
 
 ```json
 {
   "exports": {
-    "./esm": "./src/esm/tsconfig.json",
-    "./cjs": "./src/cjs/tsconfig.json"
+    ".": "./esm/tsconfig.json",
+    "./esm": "./esm/tsconfig.json",
+    "./esm-ts-next": "./esm-ts-next/tsconfig.json",
+    "./cjs": "./cjs/tsconfig.json"
   }
 }
 ```
