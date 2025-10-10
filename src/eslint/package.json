@@ -7,9 +7,9 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test-only": "glob -c \"tsx --test\" \"./test/**/*.test.ts\"",
+    "test-only": "tsx --test ./test/**/*.test.ts",
     "test": "c8 --all --src ./src -r html npm run test-only",
-    "lint": "cross-env eslint src/**/*.ts",
+    "lint": "eslint src/**/*.ts",
     "sync": "npx tsx ./scripts/sync.ts"
   },
   "files": [
