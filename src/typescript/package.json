@@ -15,6 +15,7 @@
   "files": [
     "cjs",
     "esm",
+    "esm-ts-next",
     "bin"
   ],
   "keywords": [],
