@@ -1,5 +1,11 @@
 # @openally/config.typescript
 
+## 1.2.1
+
+### Patch Changes
+
+- [#134](https://github.com/OpenAlly/configs/pull/134) [`0ccff9c`](https://github.com/OpenAlly/configs/commit/0ccff9c738f77eab9ba2bca49670cbf22120c14d) Thanks [@fraxken](https://github.com/fraxken)! - include ./esm-ts-next in the list of allowed files for the NPM tarball
+
 ## 1.2.0
 
 ### Minor Changes
