@@ -33,7 +33,7 @@
     "typescript-eslint": "^8.19.0"
   },
   "devDependencies": {
-    "@myunisoft/httpie": "^5.0.1",
+    "@openally/httpie": "^1.0.0",
     "@types/jsdom": "^27.0.0",
     "@typescript-eslint/types": "^8.19.0",
     "jsdom": "^27.0.0"

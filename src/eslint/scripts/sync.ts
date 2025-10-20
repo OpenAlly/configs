@@ -1,5 +1,5 @@
 // Import Third-party Dependencies
-import { request } from "@myunisoft/httpie";
+import { request } from "@openally/httpie";
 import { JSDOM } from "jsdom";
 
 // Import Internal Dependencies
