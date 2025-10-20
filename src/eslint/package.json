@@ -7,10 +7,10 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test-only": "tsx --test ./test/**/*.test.ts",
+    "test-only": "node --test ./test/**/*.test.ts",
     "test": "c8 --all --src ./src -r html npm run test-only",
     "lint": "eslint src/**/*.ts",
-    "sync": "npx tsx ./scripts/sync.ts"
+    "sync": "node ./scripts/sync.ts"
   },
   "files": [
     "dist"

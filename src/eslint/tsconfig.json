@@ -1,9 +1,8 @@
 {
-  "extends": "../typescript/esm/tsconfig.json",
+  "extends": "../typescript/esm-ts-next/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "./src",
-    "lib": ["ES2023"]
+    "rootDir": "./src"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

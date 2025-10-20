@@ -6,8 +6,8 @@ import tsEslint, { type ConfigArray, type ConfigWithExtends } from "typescript-e
 import type { SourceType } from "@typescript-eslint/types";
 
 // Import Internal Dependencies
-import { rules, rulesWithTS } from "./rules/index.js";
-import { rules as openallyRules } from "./customRules/index.js";
+import { rules, rulesWithTS } from "./rules/index.ts";
+import { rules as openallyRules } from "./customRules/index.ts";
 import pkg from "../package.json" with { type: "json" };
 
 const kOpenallyPlugin = {

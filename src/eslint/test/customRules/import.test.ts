@@ -5,7 +5,7 @@ import { after, describe, it } from "node:test";
 import { RuleTester } from "@typescript-eslint/rule-tester";
 
 // Import Internal Dependencies
-import { rule } from "../../src/customRules/import.js";
+import { rule } from "../../src/customRules/import.ts";
 
 RuleTester.afterAll = after;
 RuleTester.describe = describe;
