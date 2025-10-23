@@ -1,13 +1,13 @@
 // Import Internal Dependencies
-import possibleErrors from "./possible-errors.js";
-import bestPractices from "./best-practices.js";
-import ecmascript6 from "./ecmascript6.js";
-import styles from "./styles.js";
-import variables from "./variables.js";
-import eslintv9 from "./eslintv9.js";
-import typescript from "./typescript.js";
-import stylistic from "./stylistic.js";
-import openally from "./openally.js";
+import possibleErrors from "./possible-errors.ts";
+import bestPractices from "./best-practices.ts";
+import ecmascript6 from "./ecmascript6.ts";
+import styles from "./styles.ts";
+import variables from "./variables.ts";
+import eslintv9 from "./eslintv9.ts";
+import typescript from "./typescript.ts";
+import stylistic from "./stylistic.ts";
+import openally from "./openally.ts";
 
 export const rules: Record<string, any> = {
   ...bestPractices,

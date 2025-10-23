@@ -7,10 +7,10 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test-only": "tsx --test ./test/**/*.test.ts",
+    "test-only": "node --test ./test/**/*.test.ts",
     "test": "c8 --all --src ./src -r html npm run test-only",
     "lint": "eslint src/**/*.ts",
-    "sync": "npx tsx ./scripts/sync.ts"
+    "sync": "node ./scripts/sync.ts"
   },
   "files": [
     "dist"
@@ -33,7 +33,7 @@
     "typescript-eslint": "^8.19.0"
   },
   "devDependencies": {
-    "@myunisoft/httpie": "^5.0.1",
+    "@openally/httpie": "^1.0.0",
     "@types/jsdom": "^27.0.0",
     "@typescript-eslint/types": "^8.19.0",
     "jsdom": "^27.0.0"

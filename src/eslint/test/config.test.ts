@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import { ESLint, type Linter } from "eslint";
 
 // Import Internal Dependencies
-import { ESLintConfig } from "../src/index.js";
+import { ESLintConfig } from "../src/index.ts";
 
 test("should lint valid JavaScript", async() => {
   const eslint = new ESLint({

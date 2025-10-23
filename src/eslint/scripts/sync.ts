@@ -1,9 +1,9 @@
 // Import Third-party Dependencies
-import { request } from "@myunisoft/httpie";
+import { request } from "@openally/httpie";
 import { JSDOM } from "jsdom";
 
 // Import Internal Dependencies
-import { rulesWithTS } from "../src/rules/index.js";
+import { rulesWithTS } from "../src/rules/index.ts";
 
 // CONSTANTS
 const kStylistic = Symbol("stylistic");
@@ -39,7 +39,10 @@ for (const rule of rules) {
     !rule.isDeprecated &&
     !rule.isRemoved
   ) {
-    const label = rule[kStylistic] ? `${kStylisticRulesUrl}/default/${rule.ruleName}` : kEslintRulesReferenceUrl + rule.ruleName;
+    // @ts-ignore
+    const label = rule[kStylistic] ?
+      `${kStylisticRulesUrl}/default/${rule.ruleName}` :
+      kEslintRulesReferenceUrl + rule.ruleName;
     console.error(
       `Rule "${rule.ruleName}" is not present in the local ESLint configuration!(${label})`
     );
