@@ -1,0 +1,25 @@
+{
+  "name": "@openally/config.security",
+  "version": "1.0.0",
+  "description": "OpenAlly security configuration",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "openally-secure-scan": "./bin/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "openally",
+    "security",
+    "config"
+  ],
+  "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@nodesecure/mama": "^2.0.2",
+    "@nodesecure/tarball": "^2.3.0",
+    "lockfile-lint-api": "^5.9.2"
+  }
+}
