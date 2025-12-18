@@ -6,6 +6,16 @@
   "bin": {
     "clear-ts-build": "./bin/clear-ts-build.js"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenAlly/configs",
+    "directory": "src/typescript"
+  },
   "exports": {
     ".": "./esm/tsconfig.json",
     "./esm": "./esm/tsconfig.json",
