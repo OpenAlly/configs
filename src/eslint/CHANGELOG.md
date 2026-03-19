@@ -1,5 +1,11 @@
 # @openally/config.eslint
 
+## 2.4.2
+
+### Patch Changes
+
+- [#166](https://github.com/OpenAlly/configs/pull/166) [`2de2332`](https://github.com/OpenAlly/configs/commit/2de2332e84873258c20d77f3439d432bcc43f6f8) Thanks [@PierreDemailly](https://github.com/PierreDemailly)! - Restore space before arrow in type-annotation-spacing rule
+
 ## 2.4.1
 
 ### Patch Changes
