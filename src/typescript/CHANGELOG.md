@@ -1,5 +1,11 @@
 # @openally/config.typescript
 
+## 1.3.0
+
+### Minor Changes
+
+- [#157](https://github.com/OpenAlly/configs/pull/157) [`65d1694`](https://github.com/OpenAlly/configs/commit/65d169432489bfac3e3fc4b38c4c6a7fedf527cb) Thanks [@fraxken](https://github.com/fraxken)! - Enable ESNext lib so we have latest ECMAScript features
+
 ## 1.2.1
 
 ### Patch Changes
