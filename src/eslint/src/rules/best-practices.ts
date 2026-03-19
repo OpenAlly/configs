@@ -213,5 +213,8 @@ export default {
   "@stylistic/wrap-iife": "error",
 
   // See: https://eslint.org/docs/rules/yoda
-  yoda: "error"
+  yoda: "error",
+
+  // See: https://eslint.org/docs/rules/preserve-caught-error
+  "preserve-caught-error": "error"
 };
