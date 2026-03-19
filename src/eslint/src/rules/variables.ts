@@ -5,6 +5,9 @@ export default {
   // See: https://eslint.org/docs/rules/no-delete-var
   "no-delete-var": "error",
 
+  // See: https://eslint.org/docs/rules/no-unassigned-vars
+  "no-unassigned-vars": "error",
+
   // See: https://eslint.org/docs/rules/no-label-var
   "no-label-var": "error",
 
