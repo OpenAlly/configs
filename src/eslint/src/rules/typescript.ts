@@ -60,10 +60,7 @@ export default {
     "error",
     {
       before: false,
-      after: true,
-      overrides: {
-        arrow: { before: true, after: true }
-      }
+      after: true
     }
   ],
   /**
