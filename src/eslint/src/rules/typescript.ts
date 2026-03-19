@@ -59,8 +59,14 @@ export default {
   "@stylistic/type-annotation-spacing": [
     "error",
     {
-      before: false,
-      after: true
+      before: true,
+      after: true,
+      overrides: {
+        colon: {
+          before: false,
+          after: true
+        }
+      }
     }
   ],
   /**
