@@ -46,7 +46,9 @@ export default [
 
 This package also includes the OpenAlly plugin custom rules, as follows:
 
+- [`@openally/constants`](./docs/constants.md)
 - [`@openally/imports`](./docs/imports.md)
+- [`@openally/no-legacy-dirname-filename`](./docs/no-legacy-dirname-filename.md)
 
 ### Globals
 
