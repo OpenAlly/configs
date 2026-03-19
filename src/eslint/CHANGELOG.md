@@ -1,5 +1,11 @@
 # @openally/config.eslint
 
+## 2.4.1
+
+### Patch Changes
+
+- [#164](https://github.com/OpenAlly/configs/pull/164) [`0f30745`](https://github.com/OpenAlly/configs/commit/0f30745f7aff5f598c3dc7de5b72ec5141d9551d) Thanks [@PierreDemailly](https://github.com/PierreDemailly)! - Remove deprecated overrides.arrow option from type-annotation-spacing
+
 ## 2.4.0
 
 ### Minor Changes
