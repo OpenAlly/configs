@@ -265,19 +265,24 @@ export default {
   // See: https://eslint.org/docs/rules/sort-vars
   "sort-vars": "error",
 
-  // See: https://eslint.style/rules/js/sspace-before-blocks
+  // See: https://eslint.style/rules/js/space-before-blocks
   "@stylistic/space-before-blocks": "error",
 
-  // See: https://eslint.style/rules/js/sspace-before-function-paren
-  "@stylistic/space-before-function-paren": ["error", "never"],
+  // See: https://eslint.style/rules/js/space-before-function-paren
+  "@stylistic/space-before-function-paren": ["error", {
+    anonymous: "never",
+    named: "never",
+    asyncArrow: "never",
+    catch: "always"
+  }],
 
-  // See: https://eslint.style/rules/js/sspace-in-parens
+  // See: https://eslint.style/rules/js/space-in-parens
   "@stylistic/space-in-parens": ["error", "never"],
 
-  // See: https://eslint.style/rules/js/sspace-infix-ops
+  // See: https://eslint.style/rules/js/space-infix-ops
   "@stylistic/space-infix-ops": "error",
 
-  // See: https://eslint.style/rules/js/sspace-unary-ops
+  // See: https://eslint.style/rules/js/space-unary-ops
   "@stylistic/space-unary-ops": "error",
 
   // See: https://eslint.style/rules/js/spaced-comment

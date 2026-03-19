@@ -49,7 +49,12 @@ export default {
   ],
   "@stylistic/semi": ["error", "always"],
   "@stylistic/space-before-blocks": "error",
-  "@stylistic/space-before-function-paren": ["error", "never"],
+  "@stylistic/space-before-function-paren": ["error", {
+    anonymous: "never",
+    named: "never",
+    asyncArrow: "never",
+    catch: "always"
+  }],
   "@stylistic/space-infix-ops": "error",
   "@stylistic/type-annotation-spacing": [
     "error",
