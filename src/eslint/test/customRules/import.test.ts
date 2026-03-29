@@ -74,6 +74,42 @@ ruleTester.run("imports", rule, {
       // Import Internal Dependencies
       import foo from "src/bar.js";
     `
+    },
+    {
+      code: `
+      // Import Node.js Dependencies
+      // Sub comment
+      import { readFileSync } from "node:fs";
+    `
+    },
+    {
+      code: `
+      // Import Third-party Dependencies
+      // Sub comment
+      import foo from "bar";
+    `
+    },
+    {
+      code: `
+      // Import Internal Dependencies
+      // Sub comment
+      import foo from "./bar";
+    `
+    },
+    {
+      code: `
+      // Import Node.js Dependencies
+      // Sub comment
+      import { readFileSync } from "node:fs";
+
+      // Import Third-party Dependencies
+      // Sub comment
+      import foo from "bar";
+
+      // Import Internal Dependencies
+      // Sub comment
+      import foz from "./baz";
+    `
     }
   ],
   invalid: [

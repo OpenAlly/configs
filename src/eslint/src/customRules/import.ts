@@ -40,6 +40,17 @@ function internalImportGroupComment(comment: TSESTree.Comment) {
   return kInternalGroupCommentRegexp.test(comment.value);
 }
 
+function getLastCommentBeforeImport(
+  groupComment: TSESTree.Comment,
+  leadingComments: TSESTree.Comment[]
+) {
+  const subComments = leadingComments.filter(
+    (comment) => comment.loc.start.line > groupComment.loc.end.line
+  );
+
+  return subComments.length > 0 ? subComments.at(-1)! : groupComment;
+}
+
 function checkDuplicates(
   context: Readonly<RuleContext<string, unknown[]>>,
   comments: TSESTree.Comment[],
@@ -172,7 +183,8 @@ export const rule = createRule({
               });
             }
 
-            const linesBetweenGroupImport = node.loc.start.line - nodeComment.loc.end.line;
+            const lastBeforeNode = getLastCommentBeforeImport(nodeComment, leadingComments);
+            const linesBetweenGroupImport = node.loc.start.line - lastBeforeNode.loc.end.line;
             if (linesBetweenGroupImport > 1) {
               context.report({
                 node,
@@ -221,7 +233,8 @@ export const rule = createRule({
               });
             }
 
-            const linesBetweenGroupImport = node.loc.start.line - thirdPartyComment.loc.end.line;
+            const lastBeforeThirdParty = getLastCommentBeforeImport(thirdPartyComment, leadingComments);
+            const linesBetweenGroupImport = node.loc.start.line - lastBeforeThirdParty.loc.end.line;
             if (linesBetweenGroupImport > 1) {
               context.report({
                 node,
@@ -273,7 +286,8 @@ export const rule = createRule({
             });
           }
 
-          const linesBetweenGroupImport = node.loc.start.line - internalComment.loc.end.line;
+          const lastBeforeInternal = getLastCommentBeforeImport(internalComment, leadingComments);
+          const linesBetweenGroupImport = node.loc.start.line - lastBeforeInternal.loc.end.line;
           if (linesBetweenGroupImport > 1) {
             context.report({
               node,
