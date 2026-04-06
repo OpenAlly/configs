@@ -33,12 +33,12 @@
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@eslint/js": "^9.17.0",
+    "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.2.2",
     "@typescript-eslint/rule-tester": "^8.22.0",
     "@typescript-eslint/utils": "^8.22.0",
-    "eslint": "^9.35.0",
-    "globals": "^16.0.0",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
     "is-core-module": "^2.16.1",
     "typescript-eslint": "^8.19.0"
   },
