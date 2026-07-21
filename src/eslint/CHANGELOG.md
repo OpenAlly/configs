@@ -1,5 +1,13 @@
 # @openally/config.eslint
 
+## 2.4.3
+
+### Patch Changes
+
+- [#170](https://github.com/OpenAlly/configs/pull/170) [`6740fe2`](https://github.com/OpenAlly/configs/commit/6740fe22e55f432cf17704c68b1cf27a22045c6a) Thanks [@PierreDemailly](https://github.com/PierreDemailly)! - Allow sub-comments between group comment and import
+
+- [#182](https://github.com/OpenAlly/configs/pull/182) [`79ecbc8`](https://github.com/OpenAlly/configs/commit/79ecbc814be4a15243be713681d2bff4ef97066c) Thanks [@fraxken](https://github.com/fraxken)! - Classify import starting with # as internal because the character is used/reserved for Node.js subimport.
+
 ## 2.4.2
 
 ### Patch Changes
