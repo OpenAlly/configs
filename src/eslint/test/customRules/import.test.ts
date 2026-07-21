@@ -77,6 +77,24 @@ ruleTester.run("imports", rule, {
     },
     {
       code: `
+      // Import Internal Dependencies
+      import foo from "#/src/bar.js";
+    `
+    },
+    {
+      code: `
+      // Import Node.js Dependencies
+      import fs from "node:fs";
+
+      // Import Third-party Dependencies
+      import foo from "bar";
+
+      // Import Internal Dependencies
+      import foz from "#/src/bar.js";
+    `
+    },
+    {
+      code: `
       // Import Node.js Dependencies
       // Sub comment
       import { readFileSync } from "node:fs";
@@ -161,6 +179,24 @@ ruleTester.run("imports", rule, {
       `,
       errors: [
         { messageId: "thirdPartyShouldBeBeforeInternal" }
+      ]
+    },
+    {
+      code: `
+      // Import Internal Dependencies
+      import foo from "#/src/bar.js";
+
+      // Import Third-party Dependencies
+      import baz from "bar";
+      `,
+      errors: [
+        { messageId: "thirdPartyShouldBeBeforeInternal" }
+      ]
+    },
+    {
+      code: `import foo from "#/src/bar.js";`,
+      errors: [
+        { messageId: "missingInternalComment" }
       ]
     },
     {

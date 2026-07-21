@@ -18,7 +18,12 @@ type ImportDeclaration = TSESTree.ImportDeclaration & {
 };
 
 function getImportGroup(importPath: string) {
-  if (importPath.startsWith(".") || importPath.startsWith("/") || importPath.startsWith("src/")) {
+  if (
+    importPath.startsWith(".") ||
+    importPath.startsWith("/") ||
+    importPath.startsWith("src/") ||
+    importPath.startsWith("#")
+  ) {
     return "internal";
   }
   else if (isCoreModule(importPath)) {
