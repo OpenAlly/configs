@@ -5,7 +5,7 @@ import { after, describe, it } from "node:test";
 import { RuleTester } from "@typescript-eslint/rule-tester";
 
 // Import Internal Dependencies
-import { rule } from "../../src/customRules/no-legacy-dirname-filename.ts";
+import { rule } from "../../src/customRules/no-legacy-dirname-filename/index.ts";
 
 RuleTester.afterAll = after;
 RuleTester.describe = describe;
@@ -34,6 +34,18 @@ ruleTester.run("no-legacy-dirname-filename", rule, {
     {
       // Only targets __dirname/__filename declarations
       code: "const foo = { bar: path.dirname(url.fileURLToPath(import.meta.url)) };"
+    },
+    {
+      code: "const __filename = import.meta.url;"
+    },
+    {
+      code: "const __dirname = new URL(\".\", import.meta.url).pathname;"
+    },
+    {
+      code: "const __filename = getFile(import.meta.url);"
+    },
+    {
+      code: "const __dirname = path.dirname(import.meta.url);"
     }
   ],
   invalid: [

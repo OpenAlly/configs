@@ -1,19 +1,28 @@
 // Import Third-party Dependencies
 import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import stylisticPlugin from "@stylistic/eslint-plugin";
 import globals from "globals";
-import tsEslint, { type ConfigArray, type ConfigWithExtends } from "typescript-eslint";
-import type { SourceType } from "@typescript-eslint/types";
+import tsEslint, {
+  type ConfigArray,
+  type ConfigWithExtends
+} from "typescript-eslint";
 
 // Import Internal Dependencies
-import { rules, rulesWithTS } from "./rules/index.ts";
-import { rules as openallyRules } from "./customRules/index.ts";
-import pkg from "../package.json" with { type: "json" };
+import {
+  rules,
+  rulesWithTS
+} from "./rules/index.ts";
+import {
+  rules as openallyRules
+} from "./customRules/index.ts";
+import packageJSON from "../package.json" with { type: "json" };
 
+// CONSTANTS
 const kOpenallyPlugin = {
   meta: {
     name: "@openally",
-    version: pkg.version
+    version: packageJSON.version
   },
   rules: openallyRules
 };
@@ -29,7 +38,6 @@ const kBaseTypeScriptConfigs: ConfigArray = [
   {
     plugins: {
       "@typescript-eslint": tsEslint.plugin,
-      // @ts-ignore
       "@stylistic": stylisticPlugin,
       "@openally": kOpenallyPlugin
     },
@@ -42,7 +50,7 @@ const kBaseTypeScriptConfigs: ConfigArray = [
     },
     languageOptions: {
       ...kLanguageOptions,
-      sourceType: "module" as SourceType,
+      sourceType: "module",
       parser: tsEslint.parser
     },
     files: ["**/*.ts"]
@@ -69,12 +77,20 @@ export const ESLintConfig = [
 export function typescriptConfig(
   config?: ConfigWithExtends
 ) {
-  const configs: (ConfigArray & ConfigWithExtends[]) = [eslint.configs.recommended, kBaseTypeScriptConfigs];
+  const configs: (ConfigArray & ConfigWithExtends[]) = [
+    eslint.configs.recommended,
+    kBaseTypeScriptConfigs
+  ];
   if (config) {
     configs.push(config);
   }
 
-  return tsEslint.config(...configs);
+  // `typescript-eslint` and ESLint describe equivalent flat configs through
+  // incompatible declaration types. Keep the public helper typed by
+  // `typescript-eslint` and bridge only at ESLint's runtime helper boundary.
+  return defineConfig(
+    ...configs as unknown as Parameters<typeof defineConfig>
+  );
 }
 
 export { globals };

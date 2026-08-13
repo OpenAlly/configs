@@ -5,7 +5,7 @@ import { after, describe, it } from "node:test";
 import { RuleTester } from "@typescript-eslint/rule-tester";
 
 // Import Internal Dependencies
-import { rule } from "../../src/customRules/constants.ts";
+import { rule } from "../../src/customRules/constants/index.ts";
 
 RuleTester.afterAll = after;
 RuleTester.describe = describe;
@@ -48,7 +48,7 @@ ruleTester.run("constants", rule, {
     },
     {
       // should not throws because // CONSTANTS comment is not present
-      code: `const foo = "foo";`
+      code: `const kfoo = "foo";`
     },
     {
       // should not throws because // CONSTANTS comment is not present
@@ -77,6 +77,12 @@ ruleTester.run("constants", rule, {
 
       const bar = "bar";
       `
+    },
+    {
+      code: `
+      // CONSTANTS
+      const kFoo = "foo", kBar = "bar";
+      `
     }
   ],
   invalid: [
@@ -99,13 +105,13 @@ ruleTester.run("constants", rule, {
       ]
     },
     {
-      code: "const kfoo = 'foo';",
+      code: "// CONSTANTS\nconst kfoo = 'foo';",
       errors: [
         { messageId: "firstCharAfterKCapitalized" }
       ]
     },
     {
-      code: "const kFoo_bar = 'foo';",
+      code: "// CONSTANTS\nconst kFoo_bar = 'foo';",
       errors: [
         { messageId: "shouldNotContainUnderscore" }
       ]
@@ -114,9 +120,19 @@ ruleTester.run("constants", rule, {
       code: `
       // CONSTANT
       const kFoo = "foo";
+      const kBar = "bar";
       `,
       errors: [
         { messageId: "malformedComment" }
+      ]
+    },
+    {
+      code: `
+      // CONSTANTS
+      const kFoo = "foo", bad = "bar";
+      `,
+      errors: [
+        { messageId: "missingKPrefix" }
       ]
     }
   ]
