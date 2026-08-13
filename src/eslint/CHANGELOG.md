@@ -1,5 +1,11 @@
 # @openally/config.eslint
 
+## 3.0.0
+
+### Major Changes
+
+- [#184](https://github.com/OpenAlly/configs/pull/184) [`9d75a12`](https://github.com/OpenAlly/configs/commit/9d75a1247bf5c00694b8ace0f974e731b2169ae1) Thanks [@fraxken](https://github.com/fraxken)! - Improve CustomRules and fix TSLint deprecation
+
 ## 2.4.3
 
 ### Patch Changes
