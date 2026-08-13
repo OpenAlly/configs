@@ -5,7 +5,7 @@ import { after, describe, it } from "node:test";
 import { RuleTester } from "@typescript-eslint/rule-tester";
 
 // Import Internal Dependencies
-import { rule } from "../../src/customRules/import.ts";
+import { rule } from "../../src/customRules/imports/index.ts";
 
 RuleTester.afterAll = after;
 RuleTester.describe = describe;
@@ -195,6 +195,22 @@ ruleTester.run("imports", rule, {
     },
     {
       code: `import foo from "#/src/bar.js";`,
+      errors: [
+        { messageId: "missingInternalComment" }
+      ]
+    },
+    {
+      code: `import "dotenvx/config";`,
+      errors: [
+        { messageId: "missingThirdPartyComment" }
+      ]
+    },
+    {
+      code: `
+      // Import Internal Dependencies
+      const marker = true;
+      import local from "./local.js";
+      `,
       errors: [
         { messageId: "missingInternalComment" }
       ]

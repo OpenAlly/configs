@@ -1,5 +1,4 @@
 // Import Third-party Dependencies
-import { request } from "@openally/httpie";
 import { JSDOM } from "jsdom";
 
 // Import Internal Dependencies
@@ -11,15 +10,29 @@ const kEslintRulesReferenceUrl = "https://eslint.org/docs/latest/rules/";
 const kStylisticRulesUrl = "https://eslint.style/rules";
 const kLocalRules = new Set(Object.keys(rulesWithTS));
 
-const [eslintResult, stylisticResult] = await Promise.all([
-  request<string>("GET", kEslintRulesReferenceUrl),
-  request<string>("GET", kStylisticRulesUrl)
+const [eslintResponse, stylisticResponse] = await Promise.all([
+  fetch(kEslintRulesReferenceUrl),
+  fetch(kStylisticRulesUrl)
 ]);
-const eslintDom = new JSDOM(eslintResult.data);
-const stylisticDom = new JSDOM(stylisticResult.data);
+
+if (!eslintResponse.ok) {
+  throw new Error(`Unable to fetch ESLint rules: ${eslintResponse.status} ${eslintResponse.statusText}`);
+}
+if (!stylisticResponse.ok) {
+  throw new Error(`Unable to fetch Stylistic rules: ${stylisticResponse.status} ${stylisticResponse.statusText}`);
+}
+
+const [eslintHtml, stylisticHtml] = await Promise.all([
+  eslintResponse.text(),
+  stylisticResponse.text()
+]);
+const eslintDom = new JSDOM(eslintHtml);
+const stylisticDom = new JSDOM(stylisticHtml);
 const rules = new Set([
   ...parseESLintRulesReferences(eslintDom),
-  ...parseStylisticRules(stylisticDom).map((rule) => Object.assign(rule, { [kStylistic]: true }))
+  ...parseStylisticRules(stylisticDom).map((rule) => Object.assign(rule, {
+    [kStylistic]: true
+  }))
 ]);
 
 for (const rule of rules) {
