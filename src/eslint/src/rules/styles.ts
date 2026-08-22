@@ -53,7 +53,7 @@ export default {
   "func-style": ["error", "declaration"],
 
   // See: https://eslint.style/rules/js/function-paren-newline
-  "@stylistic/function-paren-newline": "off",
+  "@stylistic/function-paren-newline": ["error", { minItems: 3 }],
 
   // See: https://eslint.org/docs/rules/id-blacklist
   "id-denylist": "off",
@@ -98,8 +98,8 @@ export default {
   "@stylistic/max-len": [
     "error",
     {
-      code: 130,
-      comments: 150
+      code: 110,
+      comments: 130
     }
   ],
 
@@ -129,7 +129,7 @@ export default {
   "@stylistic/max-statements-per-line": "off",
 
   // See: https://eslint.style/rules/js/multiline-comment-style
-  "@stylistic/multiline-comment-style": "off",
+  "@stylistic/multiline-comment-style": ["error", "starred-block"],
 
   // See: https://eslint.style/rules/js/ultiline-ternary
   "@stylistic/multiline-ternary": "off",
@@ -141,7 +141,7 @@ export default {
   "@stylistic/new-parens": "error",
 
   // See: https://eslint.style/rules/js/newline-per-chained-call
-  "@stylistic/newline-per-chained-call": ["error", { ignoreChainWithDepth: 4 }],
+  "@stylistic/newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
 
   // See: https://eslint.org/docs/rules/no-array-constructor
   "no-array-constructor": "off",
