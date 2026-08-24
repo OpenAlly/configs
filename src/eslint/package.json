@@ -35,12 +35,12 @@
   "dependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.2.2",
-    "@typescript-eslint/rule-tester": "^8.22.0",
-    "@typescript-eslint/utils": "^8.22.0",
-    "eslint": "^10.6.0",
-    "globals": "^17.7.0",
-    "is-core-module": "^2.16.1",
-    "typescript-eslint": "^8.19.0"
+    "@typescript-eslint/rule-tester": "8.67.0",
+    "@typescript-eslint/utils": "8.67.0",
+    "eslint": "10.8.1",
+    "globals": "17.11.0",
+    "is-core-module": "2.16.2",
+    "typescript-eslint": "8.67.0"
   },
   "devDependencies": {
     "@types/is-core-module": "2.2.2",
