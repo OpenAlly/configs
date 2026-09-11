@@ -1,5 +1,11 @@
 # @openally/config.eslint
 
+## 3.0.1
+
+### Patch Changes
+
+- [#197](https://github.com/OpenAlly/configs/pull/197) [`c207b1b`](https://github.com/OpenAlly/configs/commit/c207b1b9c26c40a7ea56c5d205a5580968f24f5b) Thanks [@fraxken](https://github.com/fraxken)! - Fix @stylistic/function-paren-newline to multiline-arguments
+
 ## 3.0.0
 
 ### Major Changes
