@@ -19,7 +19,7 @@ $ yarn add @openally/config.eslint -D
 
 ## Usage
 
-Create a `eslint.config.mjs` file in the root of your project and extend the `@openally/eslint-config` configuration.
+Create a `eslint.config.mjs` file in the root of your project and extend the `@openally/config.eslint` configuration.
 
 ### TypeScript
 ```js

@@ -30,6 +30,7 @@ Click on one of the links to access the documentation of the package:
 | --- | --- |
 | config.typescript | [@openally/config.typescript](./src/typescript) |
 | config.eslint | [@openally/config.eslint](./src/eslint) |
+| config.stylelint | [@openally/config.stylelint](./src/stylelint) |
 
 These packages are available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
 ```bash
