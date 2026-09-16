@@ -1,0 +1,143 @@
+// Import Node.js Dependencies
+import { describe, it } from "node:test";
+
+// Import Third-party Dependencies
+import { RuleTester } from "oxlint/plugins-dev";
+
+// Import Internal Dependencies
+import { rule } from "../../src/customRules/constants/index.ts";
+
+RuleTester.describe = describe;
+RuleTester.it = it;
+RuleTester.itOnly = it.only;
+
+const ruleTester = new RuleTester({
+  eslintCompat: true,
+  languageOptions: {
+    parserOptions: { ignoreNonFatalErrors: true }
+  }
+});
+ruleTester.run("constants", rule, {
+  valid: [
+    {
+      code: `
+      // CONSTANTS
+      const kFoo = "foo";
+      export const BAR = "bar";
+    `
+    },
+    {
+      code: `
+      function foo() {}
+      const GOOD = "good";
+      export const good = "good";
+    `
+    },
+    {
+      code: `const __dirname = "dirname";`
+    },
+    {
+      code: `
+      export function foo() {}
+      const GOOD = "good";
+      export const good = "good";
+    `
+    },
+    {
+      code: `
+      export const foo = () => {}
+      const GOOD = "good";
+      export const good = "good";
+    `
+    },
+    {
+      // should not throws because // CONSTANTS comment is not present
+      code: `const kfoo = "foo";`
+    },
+    {
+      // should not throws because // CONSTANTS comment is not present
+      code: `export const foo = "foo";`
+    },
+    {
+      // malformed comment before 'CONSTANTS' comment should not ne reported
+      code: `
+      const foo = "foo";
+      // CONSTANTS
+      const kBar = "bar";
+      `
+    },
+    {
+      // destructuring should not be reported
+      code: `
+      // CONSTANTS
+      const [foo] = bar;
+      `
+    },
+    {
+      // should not report when there is blank line after the constants zone
+      code: `
+      // CONSTANTS
+      const kFoo = "foo";
+
+      const bar = "bar";
+      `
+    },
+    {
+      code: `
+      // CONSTANTS
+      const kFoo = "foo", kBar = "bar";
+      `
+    }
+  ],
+  invalid: [
+    {
+      code: `
+      // CONSTANTS
+      export const foo = "foo";
+      `,
+      errors: [
+        { messageId: "mustBeConstantCase" }
+      ]
+    },
+    {
+      code: `
+      // CONSTANTS
+      const foo = 'foo';
+      `,
+      errors: [
+        { messageId: "missingKPrefix" }
+      ]
+    },
+    {
+      code: "// CONSTANTS\nconst kfoo = 'foo';",
+      errors: [
+        { messageId: "firstCharAfterKCapitalized" }
+      ]
+    },
+    {
+      code: "// CONSTANTS\nconst kFoo_bar = 'foo';",
+      errors: [
+        { messageId: "shouldNotContainUnderscore" }
+      ]
+    },
+    {
+      code: `
+      // CONSTANT
+      const kFoo = "foo";
+      const kBar = "bar";
+      `,
+      errors: [
+        { messageId: "malformedComment" }
+      ]
+    },
+    {
+      code: `
+      // CONSTANTS
+      const kFoo = "foo", bad = "bar";
+      `,
+      errors: [
+        { messageId: "missingKPrefix" }
+      ]
+    }
+  ]
+});

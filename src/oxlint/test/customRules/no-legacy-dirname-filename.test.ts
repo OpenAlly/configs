@@ -1,0 +1,88 @@
+// Import Node.js Dependencies
+import { describe, it } from "node:test";
+
+// Import Third-party Dependencies
+import { RuleTester } from "oxlint/plugins-dev";
+
+// Import Internal Dependencies
+import { rule } from "../../src/customRules/no-legacy-dirname-filename/index.ts";
+
+RuleTester.describe = describe;
+RuleTester.it = it;
+RuleTester.itOnly = it.only;
+
+const ruleTester = new RuleTester({
+  eslintCompat: true,
+  languageOptions: {
+    parserOptions: { ignoreNonFatalErrors: true }
+  }
+});
+ruleTester.run("no-legacy-dirname-filename", rule, {
+  valid: [
+    {
+      code: "const __dirname = import.meta.dirname;"
+    },
+    {
+      code: "const __filename = import.meta.filename;"
+    },
+    {
+      // CJS file should be ignored
+      code: "const __filename = url.fileURLToPath(import.meta.url);",
+      filename: "foo.cjs"
+    },
+    {
+      // CTS file should be ignored
+      code: "const __dirname = path.dirname(url.fileURLToPath(import.meta.url));",
+      filename: "foo.cts"
+    },
+    {
+      // Only targets __dirname/__filename declarations
+      code: "const foo = { bar: path.dirname(url.fileURLToPath(import.meta.url)) };"
+    },
+    {
+      code: "const __filename = import.meta.url;"
+    },
+    {
+      code: "const __dirname = new URL(\".\", import.meta.url).pathname;"
+    },
+    {
+      code: "const __filename = getFile(import.meta.url);"
+    },
+    {
+      code: "const __dirname = path.dirname(import.meta.url);"
+    }
+  ],
+  invalid: [
+    {
+      code: "const __filename = url.fileURLToPath(import.meta.url);",
+      errors: [{ messageId: "preferImportMetaFilename" }]
+    },
+    {
+      code: "const __filename = fileURLToPath(import.meta.url);",
+      errors: [{ messageId: "preferImportMetaFilename" }]
+    },
+    {
+      code: "const __dirname = path.dirname(url.fileURLToPath(import.meta.url));",
+      errors: [{ messageId: "preferImportMetaDirname" }]
+    },
+    {
+      code: "const __dirname = dirname(fileURLToPath(import.meta.url));",
+      errors: [{ messageId: "preferImportMetaDirname" }]
+    },
+    {
+      code: "const __filename = url.fileURLToPath(import.meta.url);",
+      filename: "foo.mjs",
+      errors: [{ messageId: "preferImportMetaFilename" }]
+    },
+    {
+      code: "const __dirname = path.dirname(url.fileURLToPath(import.meta.url));",
+      filename: "foo.ts",
+      errors: [{ messageId: "preferImportMetaDirname" }]
+    },
+    {
+      code: "const __filename = url.fileURLToPath(import.meta.url);",
+      filename: "foo.mts",
+      errors: [{ messageId: "preferImportMetaFilename" }]
+    }
+  ]
+});
