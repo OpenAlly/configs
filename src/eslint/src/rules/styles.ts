@@ -53,7 +53,7 @@ export default {
   "func-style": ["error", "declaration"],
 
   // See: https://eslint.style/rules/js/function-paren-newline
-  "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
+  "@stylistic/function-paren-newline": "off",
 
   // See: https://eslint.org/docs/rules/id-blacklist
   "id-denylist": "off",
