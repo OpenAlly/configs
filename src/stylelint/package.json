@@ -1,6 +1,6 @@
 {
   "name": "@openally/config.stylelint",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "OpenAlly Stylelint configuration for front-end with Lit.js",
   "type": "module",
   "main": "./dist/index.js",

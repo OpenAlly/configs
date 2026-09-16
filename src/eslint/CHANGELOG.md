@@ -1,5 +1,11 @@
 # @openally/config.eslint
 
+## 3.0.2
+
+### Patch Changes
+
+- [#206](https://github.com/OpenAlly/configs/pull/206) [`3b64cae`](https://github.com/OpenAlly/configs/commit/3b64caed730c661fee295bc24ef354b9dde1303b) Thanks [@fraxken](https://github.com/fraxken)! - Turn off function-paren-newline rule
+
 ## 3.0.1
 
 ### Patch Changes
