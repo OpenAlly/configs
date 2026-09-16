@@ -11,7 +11,9 @@ export default {
   rules: {
     "@stylistic/block-opening-brace-space-before": "always",
     // See: https://stylelint.io/user-guide/rules/no-descending-specificity
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    // See: https://stylelint.io/user-guide/rules/no-duplicate-selectors
+    "no-duplicate-selectors": true
   },
   ignoreFiles: [
     "**/dist/**",
