@@ -5,6 +5,9 @@
       "path": "./src/eslint"
     },
     {
+      "path": "./src/oxlint"
+    },
+    {
       "path": "./src/stylelint"
     }
   ]

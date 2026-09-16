@@ -1,0 +1,13 @@
+{
+  "extends": "../../typescript/esm-ts-next/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "noEmit": true,
+    "composite": false,
+    "types": ["node"]
+  },
+  "include": [
+    "../src",
+    "."
+  ]
+}
