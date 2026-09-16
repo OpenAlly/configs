@@ -1,5 +1,11 @@
 # @openally/config.stylelint
 
+## 1.0.2
+
+### Patch Changes
+
+- [#204](https://github.com/OpenAlly/configs/pull/204) [`619e99b`](https://github.com/OpenAlly/configs/commit/619e99be29e267c2e8d7c5f90f5e325ce6757378) Thanks [@fraxken](https://github.com/fraxken)! - Add missing tsconfig to build ./dist before publishing
+
 ## 1.0.1
 
 ### Patch Changes
