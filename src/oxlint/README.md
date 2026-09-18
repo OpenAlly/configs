@@ -89,6 +89,18 @@ Rules:
 - [`@openally/consistent-this`](./docs/consistent-this.md)
 - [`@openally/interface-naming`](./docs/interface-naming.md)
 
+## Rules
+
+Every rule available for Node.js and TypeScript projects is listed in `src/rules`, including disabled ones, with a link to its documentation:
+
+- `src/rules/<plugin>/<category>.ts` for Oxlint native rules (`eslint`, `typescript`, `unicorn`, `oxc`, `import`, `node`, `promise`, `jsdoc`), grouped by [Oxlint category](https://oxc.rs/docs/guide/usage/linter/rules.html);
+- `src/rules/stylistic.ts` for `@stylistic` rules;
+- `src/rules/openally.ts` for `@openally` rules.
+
+Framework-specific plugins (`react`, `react_perf`, `jsx_a11y`, `nextjs`, `vue`, `jest`, `vitest`) are not included.
+
+Run `npm run sync` to list the rules that are missing, unknown, deprecated, duplicated or placed in the wrong category (for example after an Oxlint upgrade).
+
 ## Differences with `@openally/config.eslint`
 
 Rules come from `@openally/config.eslint`. Native Oxlint rules are used when they exist; `@stylistic` and `@openally` rules run through Oxlint JS plugins.

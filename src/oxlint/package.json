@@ -21,7 +21,8 @@
     "prepublishOnly": "npm run build",
     "test-only": "node --test ./test/**/*.test.ts",
     "test": "c8 --all --src ./src -r html npm run test-only",
-    "lint": "oxlint src"
+    "lint": "oxlint src",
+    "sync": "node ./scripts/sync.ts"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
@@ -55,6 +56,7 @@
   "devDependencies": {
     "@types/is-core-module": "2.2.2",
     "@typescript-eslint/types": "^8.19.0",
-    "oxlint": "1.83.0"
+    "oxlint": "1.83.0",
+    "oxlint-tsgolint": "7.0.2002"
   }
 }

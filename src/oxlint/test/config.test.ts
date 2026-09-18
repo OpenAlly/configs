@@ -48,6 +48,16 @@ function lint(
   }
 }
 
+test("rules should be in sync with Oxlint and JS plugins", () => {
+  const { stdout, stderr, status } = spawnSync(
+    process.execPath,
+    ["scripts/sync.ts"],
+    { cwd: kWorkspaceDir, encoding: "utf8" }
+  );
+
+  assert.strictEqual(status, 0, `${stdout}\n${stderr}`);
+});
+
 test("should lint valid JavaScript", () => {
   const diagnostics = lint("javascript.config.ts", ["test/fixtures/pass.js"]);
 
