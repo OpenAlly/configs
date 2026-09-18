@@ -1,4 +1,4 @@
-const foo: string = "bar";
+const foo = "bar";
 console.log(foo);
 function _shouldPassEvenIfNotUsedDueToLeading_(_boo: any) {
   console.log("bar");

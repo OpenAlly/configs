@@ -39,8 +39,17 @@ const kCategories: OxlintConfigType["categories"] = {
   correctness: "off"
 };
 
+const kPlugins: NonNullable<OxlintConfigType["plugins"]> = [
+  "unicorn",
+  "oxc",
+  "import",
+  "node",
+  "promise",
+  "jsdoc"
+];
+
 export const OxlintConfig: OxlintConfigType = {
-  plugins: [],
+  plugins: kPlugins,
   jsPlugins: kJsPlugins,
   categories: kCategories,
   env: {
@@ -51,11 +60,14 @@ export const OxlintConfig: OxlintConfigType = {
 };
 
 const kTypeScriptConfig = {
-  plugins: ["typescript"],
+  plugins: [...kPlugins, "typescript"],
   jsPlugins: kJsPlugins,
   categories: kCategories,
   env: {
     builtin: true
+  },
+  options: {
+    typeAware: true
   },
   rules: recommendedRules,
   overrides: [
@@ -66,7 +78,6 @@ const kTypeScriptConfig = {
       },
       rules: {
         ...rulesWithTS,
-        // `no-unused-vars` is replaced by `typescript/no-unused-vars` (same rule in Oxlint)
         "no-undef": "off",
         "no-redeclare": "off",
         /**
