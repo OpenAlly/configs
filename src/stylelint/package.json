@@ -32,9 +32,9 @@
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@stylistic/stylelint-plugin": "5.3.0",
+    "@stylistic/stylelint-plugin": "5.3.1",
     "postcss-lit": "1.4.1",
-    "stylelint": "17.15.0",
+    "stylelint": "17.16.0",
     "stylelint-config-standard": "40.0.0"
   }
 }
