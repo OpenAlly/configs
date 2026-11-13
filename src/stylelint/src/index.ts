@@ -6,10 +6,24 @@ export default {
     "@stylistic/stylelint-plugin"
   ],
   extends: [
-    "stylelint-config-standard"
+    "stylelint-config-standard",
+    // See: https://stylelint-stylistic.github.io/user-guide/recommended
+    "@stylistic/stylelint-plugin/recommended"
   ],
   rules: {
-    "@stylistic/block-opening-brace-space-before": "always",
+    // The recommended preset indents with tabs
+    "@stylistic/indentation": [2, {
+      // Multi-line values (calc(), gradients, transitions) are aligned by hand
+      ignore: ["value"]
+    }],
+    // Line endings are normalized by Git (.gitattributes), not by the linter
+    "@stylistic/linebreaks": null,
+    // Allow multi-line values to start on the declaration line, e.g. `max-height: min(\n ... \n);`
+    "@stylistic/declaration-colon-newline-after": null,
+    // Allow long value lists (e.g. font-family) to wrap with several items per line
+    "@stylistic/value-list-comma-newline-after": null,
+    // Treats a line break inside a long compound selector as an invalid combinator and joins the lines on fix
+    "@stylistic/selector-descendant-combinator-no-non-space": null,
     // See: https://stylelint.io/user-guide/rules/no-descending-specificity
     "no-descending-specificity": null,
     // See: https://stylelint.io/user-guide/rules/no-duplicate-selectors
