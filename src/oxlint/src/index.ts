@@ -4,7 +4,8 @@ import path from "node:path";
 // Import Third-party Dependencies
 import type {
   ExternalPluginEntry,
-  OxlintConfig as OxlintConfigType
+  OxlintConfig as OxlintConfigType,
+  OxlintOverride
 } from "oxlint";
 
 // Import Internal Dependencies
@@ -39,6 +40,21 @@ const kCategories: OxlintConfigType["categories"] = {
   correctness: "off"
 };
 
+/**
+ * Test files commonly declare empty fakes/stubs and several mock classes.
+ */
+const kTestOverride: OxlintOverride = {
+  files: [
+    "**/test/**",
+    "**/*.test.{js,mjs,cjs,ts,mts,cts}",
+    "**/*.spec.{js,mjs,cjs,ts,mts,cts}"
+  ],
+  rules: {
+    "no-empty-function": "off",
+    "max-classes-per-file": "off"
+  }
+};
+
 export const OxlintConfig: OxlintConfigType = {
   plugins: [],
   jsPlugins: kJsPlugins,
@@ -47,7 +63,8 @@ export const OxlintConfig: OxlintConfigType = {
     builtin: true,
     node: true
   },
-  rules
+  rules,
+  overrides: [kTestOverride]
 };
 
 const kTypeScriptConfig = {
@@ -75,11 +92,14 @@ const kTypeScriptConfig = {
          */
         "no-implicit-globals": "off"
       }
-    }
+    },
+    // Must come after the `**/*.ts` override to take precedence over it
+    kTestOverride
   ],
   ignorePatterns: [
     "**/*.d.ts",
-    "**/dist"
+    "**/dist",
+    "**/coverage"
   ]
 } satisfies OxlintConfigType;
 

@@ -6,7 +6,7 @@
 
 ## Requirements
 - [Node.js](https://nodejs.org/en/) `^20.19.0 || >=22.12.0` (same as Oxlint)
-- [oxlint](https://www.npmjs.com/package/oxlint) `~1.83.0`
+- [oxlint](https://www.npmjs.com/package/oxlint) `>=1.83.0 <1.93.0`
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ $ npm i -D oxlint @openally/config.oxlint
 $ yarn add oxlint @openally/config.oxlint -D
 ```
 
-Oxlint is a peer dependency pinned to a minor version, because the JS plugins API used to run `@stylistic` and `@openally` rules is still alpha and not covered by semver.
+Oxlint is a peer dependency capped to the tested minor versions, because the JS plugins API used to run `@stylistic` and `@openally` rules is still alpha and not covered by semver.
 
 ## Usage
 
@@ -38,7 +38,7 @@ export default defineConfig(typescriptConfig({
 `typescriptConfig()` merges your configuration into a single root config:
 
 - `rules` are applied last to `**/*.ts` files, so they take precedence over the preset.
-- `ignorePatterns` are appended to the defaults (`**/*.d.ts`, `**/dist`).
+- `ignorePatterns` are appended to the defaults (`**/*.d.ts`, `**/dist`, `**/coverage`).
 - `plugins`, `jsPlugins` and `overrides` are appended.
 
 Prefer passing your configuration to `typescriptConfig()` over `extends: [typescriptConfig()]`: Oxlint does not inherit `ignorePatterns` from extended configs, and the preset's `**/*.ts` override would take precedence over your root `rules`.
@@ -89,6 +89,17 @@ Rules:
 - [`@openally/consistent-this`](./docs/consistent-this.md)
 - [`@openally/interface-naming`](./docs/interface-naming.md)
 
+Opt-in rules (not enabled by the presets):
+
+- [`@openally/no-enum`](./docs/no-enum.md)
+- [`@openally/no-ts-private`](./docs/no-ts-private.md)
+- [`@openally/params-per-line`](./docs/params-per-line.md)
+- [`@openally/no-get-set-prefix`](./docs/no-get-set-prefix.md)
+
+### Test files
+
+Both presets turn off `no-empty-function` and `max-classes-per-file` for files matching `**/test/**`, `**/*.test.*` and `**/*.spec.*`, so tests can declare empty fakes and several mock classes. Globs are resolved relative to the config file.
+
 ## Differences with `@openally/config.eslint`
 
 Rules come from `@openally/config.eslint`. Native Oxlint rules are used when they exist; `@stylistic` and `@openally` rules run through Oxlint JS plugins.
@@ -108,6 +119,8 @@ Other differences:
 - `no-undef`, `no-useless-assignment` and `no-unreachable-loop` are Oxlint nursery rules. They are enabled by name only.
 - Oxlint detects the source type from the file extension and content. The ESLint JavaScript preset forced `sourceType: "script"`, and the TypeScript preset forced `"module"`. `no-implicit-globals` is disabled for TypeScript files to keep the ESLint behavior.
 - Oxlint's default `correctness` category is disabled so that only the rules listed by this package are enabled.
+- The TypeScript preset also enables `typescript/no-namespace` and `typescript/parameter-properties`, which `@openally/config.eslint` does not.
+- `no-empty-function` and `max-classes-per-file` are disabled in test files (see [Test files](#test-files)).
 
 ## License
 MIT

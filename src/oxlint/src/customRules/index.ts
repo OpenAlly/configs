@@ -14,11 +14,28 @@ import {
 import {
   rule as interfaceNamingRule
 } from "./interface-naming/index.ts";
+import {
+  rule as noEnumRule
+} from "./no-enum/index.ts";
+import {
+  rule as noTsPrivateRule
+} from "./no-ts-private/index.ts";
+import {
+  rule as paramsPerLineRule
+} from "./params-per-line/index.ts";
+import {
+  rule as noGetSetPrefixRule
+} from "./no-get-set-prefix/index.ts";
 
 export const rules = {
   imports: importsRule,
   constants: constantsRule,
   "no-legacy-dirname-filename": noLegacyDirnameFilenameRule,
   "consistent-this": consistentThisRule,
-  "interface-naming": interfaceNamingRule
+  "interface-naming": interfaceNamingRule,
+  // Opt-in rules (not enabled by the presets)
+  "no-enum": noEnumRule,
+  "no-ts-private": noTsPrivateRule,
+  "params-per-line": paramsPerLineRule,
+  "no-get-set-prefix": noGetSetPrefixRule
 };

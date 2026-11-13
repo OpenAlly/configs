@@ -116,3 +116,44 @@ test("typescriptConfig user rules should take precedence over the TypeScript rul
 
   assert.deepEqual(diagnostics, []);
 });
+
+test("typescriptConfig should ignore coverage directories", () => {
+  const diagnostics = lint("typescript.config.ts", ["test/fixtures"]);
+  const filenames = new Set(diagnostics.map((diagnostic) => diagnostic.filename));
+
+  assert.ok(!filenames.has("test/fixtures/coverage/fail.ts"));
+});
+
+test("typescriptConfig should report TypeScript namespaces and parameter properties", () => {
+  const diagnostics = lint("typescript.config.ts", ["test/fixtures/typescript-constructs.ts"]);
+
+  assert.deepEqual(
+    diagnostics.map((diagnostic) => diagnostic.code),
+    ["typescript(no-namespace)", "typescript(parameter-properties)"]
+  );
+});
+
+test("typescriptConfig should report empty functions and too many classes outside of tests", () => {
+  const diagnostics = lint("typescript.config.ts", ["test/fixtures/empty-function.ts"]);
+
+  assert.deepEqual(
+    diagnostics.map((diagnostic) => diagnostic.code).sort(),
+    ["eslint(max-classes-per-file)", "eslint(no-empty-function)", "eslint(no-empty-function)"]
+  );
+});
+
+test("typescriptConfig should allow empty functions and many classes in test files", () => {
+  const diagnostics = lint("typescript.config.ts", [
+    "test/fixtures/test/empty-function.ts",
+    "test/fixtures/empty-function.spec.ts",
+    "test/fixtures/empty-function.test.js"
+  ]);
+
+  assert.deepEqual(diagnostics, []);
+});
+
+test("OxlintConfig should allow empty functions and many classes in test files", () => {
+  const diagnostics = lint("javascript.config.ts", ["test/fixtures/empty-function.test.js"]);
+
+  assert.deepEqual(diagnostics, []);
+});

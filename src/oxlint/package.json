@@ -45,7 +45,7 @@
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "oxlint": "~1.83.0"
+    "oxlint": ">=1.83.0 <1.93.0"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^5.2.2",
@@ -55,6 +55,6 @@
   "devDependencies": {
     "@types/is-core-module": "2.2.2",
     "@typescript-eslint/types": "^8.19.0",
-    "oxlint": "1.83.0"
+    "oxlint": "1.92.0"
   }
 }
