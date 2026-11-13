@@ -79,6 +79,8 @@ export default {
   "typescript/no-explicit-any": "off",
   "typescript/explicit-module-boundary-types": "off",
   "typescript/no-non-null-assertion": "off",
+  "typescript/no-namespace": "error",
+  "typescript/parameter-properties": "error",
   "typescript/no-unused-vars": ["error", {
     args: "all",
     argsIgnorePattern: "^_",
