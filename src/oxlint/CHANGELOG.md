@@ -1,5 +1,11 @@
 # @openally/config.oxlint
 
+## 1.1.1
+
+### Patch Changes
+
+- [#222](https://github.com/OpenAlly/configs/pull/222) [`f56541f`](https://github.com/OpenAlly/configs/commit/f56541f99ba0b74832c10d8d3e51b41aabf77ca2) Thanks [@fraxken](https://github.com/fraxken)! - Republish the 1.1.0 changes as 1.1.1, because the 1.1.0 staged publish failed on a misconfiguration and that version can't be published again
+
 ## 1.1.0
 
 ### Minor Changes
