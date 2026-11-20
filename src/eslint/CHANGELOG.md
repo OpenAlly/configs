@@ -1,5 +1,11 @@
 # @openally/config.eslint
 
+## 3.0.3
+
+### Patch Changes
+
+- [#225](https://github.com/OpenAlly/configs/pull/225) [`55c8729`](https://github.com/OpenAlly/configs/commit/55c87290fea8b988e421fd748d75d535982335df) Thanks [@PierreDemailly](https://github.com/PierreDemailly)! - Fix vulnerabilities (use `minimatch@^11`)
+
 ## 3.0.2
 
 ### Patch Changes
