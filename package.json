@@ -22,6 +22,6 @@
     "@changesets/cli": "3.0.3",
     "@types/node": "^26.1.1",
     "c8": "^12.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   }
 }
