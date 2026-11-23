@@ -55,6 +55,6 @@
   "devDependencies": {
     "@types/is-core-module": "2.2.2",
     "@typescript-eslint/types": "^8.19.0",
-    "oxlint": "1.93.0"
+    "oxlint": "1.94.0"
   }
 }
